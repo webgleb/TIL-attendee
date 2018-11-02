@@ -29,7 +29,17 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "src/app/scripts/resizer.js",
+              "src/app/scripts/global.js",
+              "src/app/scripts/toggle-blocks.js",
+              "src/app/scripts/plugins/bootstrap/util.js",
+              "node_modules/popper.js/dist/umd/popper.js",
+              "src/app/scripts/plugins/bootstrap/dropdown.js",
+              "src/app/scripts/plugins/bootstrap-select.js",
+              "src/app/scripts/plugins/jquery.scrollbar.min.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -1,4 +1,4 @@
-import {Component, HostBinding, OnInit} from '@angular/core';
+import {Component, HostBinding, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-minded-attendees',
@@ -7,6 +7,7 @@ import {Component, HostBinding, OnInit} from '@angular/core';
 })
 export class MindedAttendeesComponent implements OnInit {
   @HostBinding('class') classes = 'l-menu-section fg1 section-color-glacier l-menu-section_bt';
+  @Input() likeminded: any;
   constructor() { }
 
   ngOnInit() {

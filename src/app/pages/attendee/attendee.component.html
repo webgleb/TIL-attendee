@@ -22,24 +22,22 @@
         <main class="l-menu-content-inner d-flex">
           <div class="row fg1 __attendee">
             <div class="d-flex col-md-8 col-sm-12 order-sm-1 order-md-1">
-              <app-your-attendance></app-your-attendance>
+              <app-your-attendance *ngIf="data.attendance" [attendance]="data.attendance"></app-your-attendance>
             </div>
-            <div class="d-flex col-md-8 order-sm-3 order-md-2">
-              <app-your-fitness></app-your-fitness>
-            </div>
-            <div class="d-flex col-md-8 col-sm-12 order-sm-2 order-md-3">
-              <app-brokered></app-brokered>
+
+            <div class="d-flex col-md-16 col-sm-24 order-sm-2 order-md-3">
+              <app-brokered *ngIf="data.brokered_connections" [brokered_connections]="data.brokered_connections"></app-brokered>
             </div>
           </div>
           <div class="row fg1 __attendee">
-            <div class="d-flex col-md-8 col-sm-12 order-sm-1 order-md-1">
-              <app-exhibitors></app-exhibitors>
+            <div class="d-flex col-md-8 order-sm-3 order-md-2">
+              <app-your-fitness *ngIf="data.fitness" [fitness]="data.fitness"></app-your-fitness>
             </div>
             <div class="d-flex col-md-8 order-sm-3 order-md-2">
-              <app-minded-attendees></app-minded-attendees>
+              <app-minded-attendees *ngIf="data.likeminded" [likeminded]="data.likeminded"></app-minded-attendees>
             </div>
             <div class="d-flex col-md-8 col-sm-12 order-sm-2 order-md-3">
-              <app-your-sessions></app-your-sessions>
+              <app-your-sessions *ngIf="data.sessions" [sessions]="data.sessions"></app-your-sessions>
             </div>
           </div>
         </main>

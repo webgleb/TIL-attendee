@@ -1,4 +1,4 @@
-import {Component, HostBinding, OnInit} from '@angular/core';
+import {Component, HostBinding, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-your-sessions',
@@ -7,9 +7,12 @@ import {Component, HostBinding, OnInit} from '@angular/core';
 })
 export class YourSessionsComponent implements OnInit {
   @HostBinding('class') classes = 'l-menu-section fg1 section-color-glacier';
+  @Input() sessions: any;
+
   constructor() { }
 
   ngOnInit() {
+    console.log(this.sessions)
   }
 
 }

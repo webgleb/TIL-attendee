@@ -1,4 +1,4 @@
-import {Component, HostBinding, OnInit} from '@angular/core';
+import {Component, HostBinding, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-your-fitness',
@@ -7,9 +7,11 @@ import {Component, HostBinding, OnInit} from '@angular/core';
 })
 export class YourFitnessComponent implements OnInit {
   @HostBinding('class') classes = 'l-menu-section fg1 section-color-glacier l-menu-section_bt';
+  @Input() fitness: any;
   constructor() { }
 
   ngOnInit() {
+    console.log(this.fitness)
   }
 
 }

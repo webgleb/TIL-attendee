@@ -1,95 +1,16 @@
 <div class="l-menu-section fg1 section-color-glacier l-menu-section_bt">
   <div class="l-menu-section-title"><span>YOUR FITNESS</span></div>
   <div class="l-menu-section-inner">
-    <div class="l-menu-section-block __b-25">
+    <div class="l-menu-section-block __b-25" *ngFor="let fit of fitness.metrics">
       <div class="box-icon-caption __bic_tan-hide_gl">
         <div class="box-icon-caption__wrapper">
-          <div class="box-icon-caption__title">STEPS</div>
+          <div class="box-icon-caption__title">{{fit.caption}}</div>
           <div class="box-icon-caption__content">
-            <div class="box-icon-caption__meaning">14,234</div>
-            <div class="box-icon-caption__icon"><i class="icon icon-icon-circle-steps "></i></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="l-menu-section-block __b-25">
-      <div class="box-icon-caption __bic_tan-hide_gl">
-        <div class="box-icon-caption__wrapper">
-          <div class="box-icon-caption__title">CALORIES</div>
-          <div class="box-icon-caption__content">
-            <div class="box-icon-caption__meaning">5,774</div>
-            <div class="box-icon-caption__icon"><i class="icon icon-icon-circle-burning "></i></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="l-menu-section-block __b-50">
-      <div class="att-icon-chart-box">
-        <div class="att-icon-chart__ic">
-          <div class="box-icon-caption __bic_tan-hide_gl">
-            <div class="box-icon-caption__wrapper">
-              <div class="box-icon-caption__title">PEAK STEPS</div>
-              <div class="box-icon-caption__content">
-                <div class="box-icon-caption__meaning">2,789</div>
-                <div class="box-icon-caption__icon"><i class="icon icon-icon-circle-compare "></i></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="att-icon-chart__ch">
-          <div class="col-chart  __cc_tan-hide_gl __att">
-            <div class="col-chart__wrapper">
-              <div class="col-chart__content">
-                <div data-type="maxValue" class="col-chart__content-view">
-                  <div class="col-chart__items scroll-container">
-                    <div class="col-chart__item">
-                      <div data-value="42" class="col-chart__item-chr __c_golden-tainoi__col-chart"></div>
-                      <div class="col-chart__item-legend">8</div>
-                    </div>
-                    <div class="col-chart__item">
-                      <div data-value="68" class="col-chart__item-chr __c_golden-tainoi__col-chart"></div>
-                      <div class="col-chart__item-legend">9</div>
-                    </div>
-                    <div class="col-chart__item">
-                      <div data-value="145" class="col-chart__item-chr __c_golden-tainoi__col-chart"></div>
-                      <div class="col-chart__item-legend">10</div>
-                    </div>
-                    <div class="col-chart__item">
-                      <div data-value="191" class="col-chart__item-chr __c_golden-tainoi__col-chart"></div>
-                      <div class="col-chart__item-legend">11</div>
-                    </div>
-                    <div class="col-chart__item">
-                      <div data-value="93" class="col-chart__item-chr __c_golden-tainoi__col-chart"></div>
-                      <div class="col-chart__item-legend">12</div>
-                    </div>
-                    <div class="col-chart__item">
-                      <div data-value="40" class="col-chart__item-chr __c_golden-tainoi__col-chart"></div>
-                      <div class="col-chart__item-legend">1</div>
-                    </div>
-                    <div class="col-chart__item">
-                      <div data-value="34" class="col-chart__item-chr __c_golden-tainoi__col-chart"></div>
-                      <div class="col-chart__item-legend">2</div>
-                    </div>
-                    <div class="col-chart__item">
-                      <div data-value="18" class="col-chart__item-chr __c_golden-tainoi__col-chart"></div>
-                      <div class="col-chart__item-legend">3</div>
-                    </div>
-                    <div class="col-chart__item">
-                      <div data-value="15" class="col-chart__item-chr __c_golden-tainoi__col-chart"></div>
-                      <div class="col-chart__item-legend">4</div>
-                    </div>
-                    <div class="col-chart__item">
-                      <div data-value="3" class="col-chart__item-chr __c_golden-tainoi__col-chart"></div>
-                      <div class="col-chart__item-legend">5</div>
-                    </div>
-                    <div class="col-chart__item">
-                      <div data-value="2" class="col-chart__item-chr __c_golden-tainoi__col-chart"></div>
-                      <div class="col-chart__item-legend">6</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="box-icon-caption__meaning">{{fit.value1}}</div>
+            <div class="box-icon-caption__icon" *ngIf="fit.key === 'steps'"><i class="icon icon-icon-circle-steps " ></i></div>
+            <div class="box-icon-caption__icon" *ngIf="fit.key === 'time'"><i class="icon icon-icon-circle-paths "></i></div>
+            <div class="box-icon-caption__icon" *ngIf="fit.key === 'miles'"><i class="icon icon-icon-circle-compare "></i></div>
+            <div class="box-icon-caption__icon" *ngIf="fit.key === 'calories'"><i class="icon icon-icon-circle-burning "></i></div>
           </div>
         </div>
       </div>

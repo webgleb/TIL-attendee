@@ -11,6 +11,8 @@ import { YourSessionsComponent } from './components/your-sessions/your-sessions.
 import { ExhibitorsComponent } from './components/exhibitors/exhibitors.component';
 import { MindedAttendeesComponent } from './components/minded-attendees/minded-attendees.component';
 
+import { AppRoutingModule } from './app-routing.module';
+
 import {ApiService} from './services/api.service';
 
 @NgModule({
@@ -26,7 +28,8 @@ import {ApiService} from './services/api.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

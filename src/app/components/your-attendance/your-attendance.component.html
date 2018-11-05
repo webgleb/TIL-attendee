@@ -11,9 +11,7 @@
           <div class="a-box__icon">
             <div class="a-box__title">DWELL</div>
             <div class="a-box__value"><i class="icon icon-icon-clock"></i>
-              <span >
-                {{attend.value2}}
-                <!--14<i class="i-sm">h</i>:34<i class="i-sm">m</i>-->
+              <span class="a-box__value__styled" [innerHTML]="getTimeArray(attend.value2)">
               </span>
             </div>
           </div>

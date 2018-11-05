@@ -13,6 +13,6 @@ export class ApiService {
   }
 
   getData() {
-    return this.http.get(API_URL + '2C9BFEEA-18BD-438B-A88E-9722B10C8E6E');
+    return this.http.get(API_URL + '70FFBFEA-0961-4B79-9D9D-89736836E218');
   }
 }

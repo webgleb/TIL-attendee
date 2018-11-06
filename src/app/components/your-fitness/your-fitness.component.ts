@@ -11,7 +11,6 @@ export class YourFitnessComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.fitness)
   }
 
 }

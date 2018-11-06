@@ -27,6 +27,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/ngx-smart-modal/ngx-smart-modal.css",
               "src/styles.scss"
             ],
             "scripts": [

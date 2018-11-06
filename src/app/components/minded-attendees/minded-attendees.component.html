@@ -5,13 +5,13 @@
       <div class="scroll-list-box__wrapper __default">
         <div class="scroll-list-box__title">
           <div class="scroll-list-box__title-dt">ATTENDED</div>
-          <div class="scroll-list-box__title-dd">DWELL</div>
+          <div class="scroll-list-box__title-dd">RANK</div>
         </div>
         <div class="scroll-list-box__body">
           <div class="scroll-list-box__items scroll-container">
             <dl *ngFor="let mind of likeminded.metrics[0].values">
               <dt><span>{{mind.caption}}</span><a href="#">{{mind.referenceMaterial}}</a></dt>
-              <dd>{{mind.value1}}</dd>
+              <dd>{{(mind.value1 * 100).toFixed(0)}}</dd>
             </dl>
 
           </div>

@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 const API_URL = '';
 
@@ -21,5 +22,23 @@ export class ApiService {
       params: paramsOpt
     };
     return this.http.get(`https://apidev1.theindoorlab.com/eventanalyzer/attendee/v2/snapshot/${id}`, options);
+  }
+  connectBrokered(eventID, payload) {
+
+    const headers = new HttpHeaders()
+      .set('APPLICATIONID', environment.APPLICATIONID)
+      .set('AUTHENTICATIONTOKEN', environment.AUTHENTICATIONTOKEN);
+
+    let params = new HttpParams();
+
+    Object.keys(payload).forEach((key) => {
+      params = params.append(key, payload[key]);
+    });
+
+    const options = {
+      params: params,
+      headers: headers
+    };
+    return this.http.get(`https://apidev1.theindoorlab.com/eventanalyzer/brokeredconnection/v2/connect/${eventID}`, options);
   }
 }

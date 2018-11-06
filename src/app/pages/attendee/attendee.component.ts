@@ -25,7 +25,6 @@ export class AttendeeComponent implements OnInit{
         res.resultGroups.forEach((item) => {
           this.data[item.key] = item;
         });
-        console.log(this.data);
         setTimeout(() => {
           scrollInitJslogic();
           scrollResponsiveJslogic();

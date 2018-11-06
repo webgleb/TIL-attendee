@@ -11,7 +11,7 @@
           <div class="scroll-list-box__items scroll-container">
             <dl *ngFor="let mind of likeminded.metrics[0].values">
               <dt><span>{{mind.caption}}</span><a href="#">{{mind.referenceMaterial}}</a></dt>
-              <dd>{{(mind.value1 * 100).toFixed(0)}}</dd>
+              <dd>{{(mind.value1 * 100).toFixed(0)}} %</dd>
             </dl>
 
           </div>

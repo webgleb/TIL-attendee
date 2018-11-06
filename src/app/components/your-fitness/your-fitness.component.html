@@ -5,9 +5,10 @@
       <div class="box-icon-caption __bic_tan-hide_gl">
         <div class="box-icon-caption__wrapper">
           <div class="box-icon-caption__title">{{fit.caption}}</div>
-          <div class="box-icon-caption__content">
-            <div class="box-icon-caption__meaning" *ngIf="fit.key === 'time'" [innerHTML]="fit.value1 | prettyTime"></div>
-            <div class="box-icon-caption__meaning" *ngIf="fit.key !== 'time'">{{fit.value1}}</div>
+          <div class="box-icon-caption__content" [ngSwitch]="fit.key">
+            <div class="box-icon-caption__meaning" *ngSwitchCase="'time'" [innerHTML]="fit.value1 | prettyTime:true"></div>
+            <div class="box-icon-caption__meaning" *ngSwitchCase="'steps'">{{fit.value1 | commas}}</div>
+            <div class="box-icon-caption__meaning" *ngSwitchDefault>{{fit.value1}}</div>
             <div class="box-icon-caption__icon" *ngIf="fit.key === 'steps'"><i class="icon icon-icon-circle-steps "></i></div>
             <div class="box-icon-caption__icon" *ngIf="fit.key === 'time'"><i class="icon icon-icon-circle-paths "></i></div>
             <div class="box-icon-caption__icon" *ngIf="fit.key === 'miles'"><i class="icon icon-icon-circle-compare "></i></div>

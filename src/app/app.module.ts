@@ -20,6 +20,7 @@ import {ApiService} from './services/api.service';
 
 // pipes
 import { PrettyTime } from './pipes/prettyTime.pipe';
+import { CommasPipe } from './pipes/commas.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PrettyTime } from './pipes/prettyTime.pipe';
     YourSessionsComponent,
     ExhibitorsComponent,
     MindedAttendeesComponent,
-    PrettyTime
+    PrettyTime,
+    CommasPipe
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 <div class="l-menu-section fg1 section-color-glacier">
-  <div class="l-menu-section-title"><span>BROKERED CONNECTIONSTM &trade;</span></div>
+  <div class="l-menu-section-title"><span>BROKERED CONNECTIONS &trade;</span></div>
   <div class="l-menu-section-inner">
     <div class="scroll-list-box is-v2">
       <div class="scroll-list-box__wrapper __default __wb">
@@ -16,7 +16,7 @@
               <div data-title="EXIBITOR" class="bc-title">{{broker.caption}}</div>
               <div data-title="INDUSTRY" class="bc-industry">{{broker.industry}}</div>
               <div data-title="VISITS" class="bc-visits">{{broker.visits}}</div>
-              <div data-title="DWELL" class="bc-dwell" [innerHTML]="broker.dwell | prettyTime"></div>
+              <div data-title="DWELL" class="bc-dwell" [innerHTML]="broker.dwell | prettyTime:true"></div>
 
               <div data-title="emails" class="bc-connection" *ngIf="broker.email">
                 <span >{{broker.email}}</span>
@@ -40,7 +40,7 @@
   <div class="custompoput-box">
     <div class="custompoput-box__wrapepr">
       <div class="custompoput-box__title">BROKERED CONNECTION &trade;</div>
-      <div class="custompoput-box__text">The recipient will receive your request to connect when the show ends within their attendee snapshot.</div>
+      <div class="custompoput-box__text">By connecting or accepting brokered connection &trade; requests, your name, email, and phone number will be shared with the repicient.</div>
       <div class="custompoput-box__actions">
         <div class="custompoput-box__confirm">
           <label>

@@ -11,7 +11,7 @@
           <div class="scroll-list-box__items scroll-container">
             <dl *ngFor="let session of sessions.metrics[0].values">
               <dt><span>{{session.caption}}</span><a href="#">{{session.capreferenceMaterialion}}</a></dt>
-              <dd>{{session.value1}}</dd>
+              <dd>{{session.value1  | prettyTime:true}}</dd>
             </dl>
           </div>
         </div>

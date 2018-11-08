@@ -43,9 +43,9 @@ export class BrokeredComponent implements OnInit {
     });
   }
 
-  acceptUser(index: number, withModal: boolean) {
+  acceptUser(index: number) {
     this.selectedIndex = index;
-    if (!localStorage.getItem('showModal') && withModal) {
+    if (!localStorage.getItem('showModal')) {
       this.ngxSmartModalService.getModal('myModal').open();
     } else {
       this.tryAccept();

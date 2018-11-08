@@ -1,4 +1,5 @@
 .leadgen-label{
+    &.__unsubscribed,
     &.__connect{
         cursor: pointer;
     }
@@ -11,5 +12,10 @@
 .scroll-list-box__items{
     dl{
         flex-grow: unset;
+        span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
     }
 }

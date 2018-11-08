@@ -24,13 +24,13 @@ export class BrokeredComponent implements OnInit {
     console.log();
   }
 
-  tryConnect() {
+  tryAccept() {
     const eventId: string = this.route.snapshot.paramMap.get('id');
     this.route.queryParams.subscribe((params: Params) => {
       const payload: any = {};
       payload.attendeeid = params.attendeeid;
       payload.companyid = this.brokered_connections.metrics[0].values[this.selectedIndex].key;
-      this.api.connectBrokered(eventId, payload).subscribe((res: any) => {
+      this.api.acceptBrokered(eventId, payload).subscribe((res: any) => {
         this.brokered_connections.metrics[0].values[this.selectedIndex] = {
           ...this.brokered_connections.metrics[0].values[this.selectedIndex],
           dwell: res.resultGroups[0].metrics[0].dwell,
@@ -43,12 +43,12 @@ export class BrokeredComponent implements OnInit {
     });
   }
 
-  connectUser(index: number) {
+  acceptUser(index: number, withModal: boolean) {
     this.selectedIndex = index;
-    if (!localStorage.getItem('showModal')) {
+    if (!localStorage.getItem('showModal') && withModal) {
       this.ngxSmartModalService.getModal('myModal').open();
     } else {
-      this.tryConnect();
+      this.tryAccept();
     }
   }
 
@@ -58,6 +58,6 @@ export class BrokeredComponent implements OnInit {
     }
     this.isChecked = false;
     this.ngxSmartModalService.getModal('myModal').close();
-    this.tryConnect();
+    this.tryAccept();
   }
 }

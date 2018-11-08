@@ -41,4 +41,22 @@ export class ApiService {
     };
     return this.http.get(`https://apidev1.theindoorlab.com/eventanalyzer/brokeredconnection/v2/connect/${eventID}`, options);
   }
+  acceptBrokered(eventID, payload) {
+
+    const headers = new HttpHeaders()
+      .set('APPLICATIONID', environment.APPLICATIONID)
+      .set('AUTHENTICATIONTOKEN', environment.AUTHENTICATIONTOKEN);
+
+    let params = new HttpParams();
+
+    Object.keys(payload).forEach((key) => {
+      params = params.append(key, payload[key]);
+    });
+
+    const options = {
+      params: params,
+      headers: headers
+    };
+    return this.http.get(`https://apidev1.theindoorlab.com/eventanalyzer/brokeredconnection/v2/accept/${eventID}`, options);
+  }
 }

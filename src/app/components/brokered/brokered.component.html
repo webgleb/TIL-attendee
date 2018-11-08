@@ -23,9 +23,10 @@
               </div>
 
               <div data-title="emails" class="bc-connection" *ngIf="!broker.email">
-                <span *ngIf="broker.state === 0" class="leadgen-label __connect" (click)="connectUser(i);">Connect</span>
-                <span *ngIf="broker.state === 1" class="leadgen-label __pending">Pending</span>
-                <span *ngIf="broker.state === 2">{{broker.email}}</span>
+                <span *ngIf="broker.state === 0 && !broker.isLoading" class="leadgen-label __connect" (click)="acceptUser(i, true)">Connect</span>
+                <span *ngIf="broker.state === 1 && !broker.isLoading" class="leadgen-label __unsubscribed" (click)="acceptUser(i, false)">Accept</span>
+                <span *ngIf="broker.state === 2 && !broker.isLoading">{{broker.email}}</span>
+                <span *ngIf="broker.isLoading" class="leadgen-label __pending">Pending</span>
               </div>
             </dl>
 

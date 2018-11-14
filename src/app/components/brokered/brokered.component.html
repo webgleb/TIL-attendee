@@ -19,13 +19,13 @@
               <div data-title="DWELL" class="bc-dwell" [innerHTML]="broker.dwell | prettyTime:true"></div>
 
               <div data-title="emails" class="bc-connection" *ngIf="broker.email">
-                <span >{{broker.email}}</span>
+                <a href="mailto:{{ broker.email }}">{{broker.email}}</a>
               </div>
 
               <div data-title="emails" class="bc-connection" *ngIf="!broker.email">
                 <span *ngIf="broker.state === 0" class="leadgen-label __connect" (click)="acceptUser(i)">Connect</span>
                 <span *ngIf="broker.state === 1" class="leadgen-label __unsubscribed" (click)="acceptUser(i)">Accept</span>
-                <span *ngIf="broker.state === 2">{{broker.email}}</span>
+                <a *ngIf="broker.state === 2" href="mailto:{{ broker.email }}">{{broker.email}}</a>
               </div>
             </dl>
 

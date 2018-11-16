@@ -13,6 +13,7 @@ import {ApiService} from '../../services/api.service';
 })
 export class AttendeeComponent implements OnInit{
   data: any = {};
+  customerName: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,7 +33,7 @@ export class AttendeeComponent implements OnInit{
         }, 0);
       });
     });
-
+    this.customerName = this.data.attendance['metrics'][0].value;
   }
 
 }

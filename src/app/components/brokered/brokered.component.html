@@ -19,7 +19,7 @@
               <div data-title="DWELL" class="bc-dwell" [innerHTML]="broker.dwell | prettyTime:true"></div>
 
               <div data-title="emails" class="bc-connection" *ngIf="broker.email">
-                <a href="mailto:{{ broker.email }}">{{broker.email}}</a>
+                <a href="mailto:{{broker.email }}">{{broker.email}}</a>
               </div>
 
               <div data-title="emails" class="bc-connection" *ngIf="!broker.email">

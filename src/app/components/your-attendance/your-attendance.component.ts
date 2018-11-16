@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, HostBinding, Input, OnInit} from '@angular/core';
+import {Component, HostBinding, Input, OnInit} from '@angular/core';
 import * as Moment from 'moment';
 
 @Component({
@@ -15,6 +15,9 @@ export class YourAttendanceComponent implements OnInit {
   }
 
   ngOnInit() {
+    // for (let i = 0; i < this.attendance.metrics.length; i++) {
+    //   this.attendance.metrics[i] = this.attendance.metrics[i + 2];
+    // }
   }
 
   getTimeArray(date) {
